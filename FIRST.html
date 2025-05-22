@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="FIRST.CSS" rel="stylesheet">
+    <title>MY FIRST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="mainbody"> 
+    <canvas id="background-animation"></canvas>
+    <canvas id="stars-canvas"></canvas>
+
+
+    <div class="theme-toggle">
+        <input type="checkbox" id="toggle-theme" />
+        <label for="toggle-theme" class="toggle-label"></label>
+      </div>
+      
+
+    <nav class="nav1" id="navbar">
+        <div id="me"><label>WELCOME TO MY PORTFOLIO</label></div>
+        <hr>
+        <select id="about-me">
+            <option value="default">Select an Option</option>
+            <option value="contact">My Contact Information</option>
+            <option value="projects">My Projects</option>
+            <option value="personal">My Aspirations</option>
+        </select>
+        <h2 id="head2"></h2><hr>
+    </nav>
+
+    <main>
+        <section id="main-content">
+            <h1 id="introduction">I'M PRINCE - A WEB DEVELOPER</h1>
+            <p class="intro-text">Welcome to my digital space where I showcase my skills, aspirations, and achievements. Explore and know more about me!</p>
+        </section>
+
+        <section id="contact" class="hidden">
+            <h3>Contact Information</h3>
+            <p class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+63">Phone: +63</a></p>
+            <p class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:princecultura07@gmail.com">Email: princecultura07@gmail.com</a></p>
+        </section>
+
+        <section id="projects" class="hidden flex-container">
+            <div class="image-container">
+                <img src="150bc241-4db3-4fa0-a5c0-f21b675b9c97.jpg" id="certi">
+            </div>
+            <div class="text-container">
+                <h3>My Projects</h3>
+                <p>I have built several web applications using HTML, CSS, JavaScript, and React. I love solving problems and making responsive, beautiful websites!</p>
+            </div>
+        </section>
+        
+        <section id="personal" class="hidden flex-container">
+            <div class="image-container">
+                <img src="674be922-2416-48a5-be38-de033ab987c8.jpg" id="face">
+            </div>
+            <div class="text-container">
+                <h3>My Aspirations</h3>
+                <p>My dream is to become a Full-Stack Developer, mastering both front-end and back-end technologies. I am passionate about building seamless, user-friendly applications that solve real-world problems. Every day, I strive to improve my skills in HTML, CSS, JavaScript, React, Node.js, and other modern technologies. I believe that with continuous learning, dedication, and creativity, I can contribute to projects that make a positive impact on the world.</p>
+                <p>In the future, I aim to work with dynamic teams, collaborate on meaningful projects, and eventually mentor and inspire others who are starting their journey in tech  just like I am today.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="flex-container">
+            <div class="text-container">
+                <h3>My Skills</h3>
+                <p>As a future Full-Stack Developer, I am consistently working to sharpen my technical skills across various technologies.</p>
+                <div class="skill">
+                    <label>HTML</label>
+                    <div class="skill-bar">
+                        <div class="skill-level html"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>CSS</label>
+                    <div class="skill-bar">
+                        <div class="skill-level css"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>JavaScript</label>
+                    <div class="skill-bar">
+                        <div class="skill-level javascript"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>React</label>
+                    <div class="skill-bar">
+                        <div class="skill-level react"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>Node.js</label>
+                    <div class="skill-bar">
+                        <div class="skill-level node"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>Connect with me:</p>
+        <div class="socials">
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+        </div>
+        <hr style="margin: 20px 0; border: 1px solid #555;">
+        <p style="font-size: 14px; color: #aaa;">© 2025 Prince Portfolio. All Rights Reserved.</p>
+        <p style="font-size: 12px; color: #777;">Designed and built by Prince with ❤️ using HTML, CSS, and JavaScript.</p>
+    </footer>
+
+    <div class="cursor"></div>
+    <div class="smoke-container"></div>
+
+    <script>  
+(function () {
+  const canvas = document.getElementById('stars-canvas');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const stars = [];
+  const starCount = 200;
+
+  for (let i = 0; i < starCount; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 1.5,
+      alpha: Math.random(),
+      delta: Math.random() * 0.02
+    });
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(star => {
+      star.alpha += star.delta;
+      if (star.alpha <= 0 || star.alpha >= 1) star.delta = -star.delta;
+
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(drawStars);
+  }
+
+  drawStars();
+})();
+  const canvas = document.getElementById('background-animation');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let particles = [];
+  const particleCount = 100;
+
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.radius = Math.random() * 2;
+      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.speedY = (Math.random() - 0.5) * 0.5;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+        this.reset();
+      }
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 255, 200, 0.8)';
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+
+        
+       const toggle = document.getElementById('toggle-theme');
+       toggle.addEventListener('change', () => {
+       document.body.classList.toggle('dark-mode');
+       });
+
+
+
+        const selector = document.getElementById('about-me');
+        const sections = ['contact', 'projects', 'personal'];
+
+        selector.addEventListener('change', function() {
+            const value = this.value;
+
+            
+            sections.forEach(id => {
+                const elem = document.getElementById(id);
+                elem.style.display = 'none';
+                elem.classList.remove('fade-in');
+            });
+
+            
+            if (value !== "default") {
+                document.getElementById('main-content').style.display = 'none';
+            } else {
+                document.getElementById('main-content').style.display = 'block';
+            }
+
+            
+            if (sections.includes(value)) {
+                const elem = document.getElementById(value);
+                elem.style.display = 'block';
+                void elem.offsetWidth; // Force reflow
+                elem.classList.add('fade-in');
+            }
+        });
+
+        const cursor = document.querySelector('.cursor');
+        const smokeContainer = document.querySelector('.smoke-container');
+
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+
+            createSmoke(e.pageX, e.pageY);
+        });
+
+        
+        function createSmoke(x, y) {
+            const smoke = document.createElement('div');
+            smoke.classList.add('smoke');
+            smoke.style.left = `${x}px`;
+            smoke.style.top = `${y}px`;
+
+            smokeContainer.appendChild(smoke);
+
+            
+            setTimeout(() => {
+                smoke.remove();
+            }, 1500); 
+        }
+    </script>
+</body>
+</html>
