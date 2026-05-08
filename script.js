@@ -116,28 +116,34 @@
     draw();
 })();
 
-// CUSTOM CURSOR
-const cur = document.getElementById('cur');
-const ring = document.getElementById('ring');
-let mx = 0,
-    my = 0,
-    rx = 0,
-    ry = 0;
+// MODERN CURSOR
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+let mouseX = 0,
+    mouseY = 0,
+    followerX = 0,
+    followerY = 0;
 
-document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-    cur.style.left = mx + 'px';
-    cur.style.top = my + 'px';
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // Main cursor follows immediately
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
 });
 
-(function loop() {
-    rx += (mx - rx) * 0.1;
-    ry += (my - ry) * 0.1;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(loop);
-})();
+// Smooth follower animation
+function animateCursor() {
+    followerX += (mouseX - followerX) * 0.15;
+    followerY += (mouseY - followerY) * 0.15;
+
+    cursorFollower.style.left = followerX + 'px';
+    cursorFollower.style.top = followerY + 'px';
+
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
 
 // THEME TOGGLE
 const tb = document.getElementById('themeBtn');
