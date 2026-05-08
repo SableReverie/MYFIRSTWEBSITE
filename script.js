@@ -116,45 +116,6 @@
     draw();
 })();
 
-// MODERN CURSOR
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
-let mouseX = 0,
-    mouseY = 0,
-    followerX = 0,
-    followerY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    // Main cursor follows immediately
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
-});
-
-// Add hover class to body when hovering over interactive elements
-const interactiveElements = document.querySelectorAll('a, button, input, textarea, .chip, .proj-card, .about-item');
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        document.body.classList.add('cursor-hover');
-    });
-    el.addEventListener('mouseleave', () => {
-        document.body.classList.remove('cursor-hover');
-    });
-});
-
-// Smooth follower animation
-function animateCursor() {
-    followerX += (mouseX - followerX) * 0.15;
-    followerY += (mouseY - followerY) * 0.15;
-
-    cursorFollower.style.left = followerX + 'px';
-    cursorFollower.style.top = followerY + 'px';
-
-    requestAnimationFrame(animateCursor);
-}
-animateCursor();
 // THEME TOGGLE
 const tb = document.getElementById('themeBtn');
 tb.addEventListener('click', () => {
