@@ -38,48 +38,8 @@ body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     transition: background .35s, color .35s;
     overflow-x: hidden;
-    cursor: none;
 }
 
-/* MODERN CLEAN CURSOR */
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--accent);
-    border-radius: 2px;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%) rotate(45deg);
-    transition: width 0.3s, height 0.3s, border-color 0.3s, border-radius 0.3s;
-    mix-blend-mode: difference;
-}
-
-.cursor-follower {
-    position: fixed;
-    width: 4px;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s, background 0.3s;
-}
-
-/* Cursor hover states - using body class instead */
-body.cursor-hover .cursor {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    border-color: var(--accent2);
-}
-
-body.cursor-hover .cursor-follower {
-    width: 6px;
-    height: 6px;
-    background: var(--accent2);
-}
 /* STARS CANVAS */
 #stars {
     position: fixed;
@@ -372,6 +332,7 @@ nav {
 }
 
 .photo-inner img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
