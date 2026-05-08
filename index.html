@@ -2,280 +2,308 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="FIRST.CSS" rel="stylesheet">
-    <title>MY FIRST</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince | Game Developer & UI/UX Designer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
+    <canvas id="stars"></canvas>
+    <div class="shape sh1"></div>
+    <div class="shape sh2"></div>
+    <div id="cur"></div>
+    <div id="ring"></div>
 
-<body class="mainbody"> 
-    <canvas id="background-animation"></canvas>
-    <canvas id="stars-canvas"></canvas>
-
-
-    <div class="theme-toggle">
-        <input type="checkbox" id="toggle-theme" />
-        <label for="toggle-theme" class="toggle-label"></label>
-      </div>
-      
-
-    <nav class="nav1" id="navbar">
-        <div id="me"><label>WELCOME TO MY PORTFOLIO</label></div>
-        <hr>
-        <select id="about-me">
-            <option value="default">Select an Option</option>
-            <option value="contact">My Contact Information</option>
-            <option value="projects">My Projects</option>
-            <option value="personal">My Aspirations</option>
-        </select>
-        <h2 id="head2"></h2><hr>
+    <nav>
+        <div class="nav-logo">PRC.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-btn" id="themeBtn" title="Toggle theme">☀</button>
     </nav>
 
-    <main>
-        <section id="main-content">
-            <h1 id="introduction">I'M PRINCE - SOFTWARE SECURITY</h1>
-            <p class="intro-text">Welcome to my digital space where I showcase my skills, aspirations, and achievements. Explore and know more about me!</p>
-        </section>
+    <!-- HERO -->
+    <section id="hero">
+        <div class="wrap">
+            <div class="hero-inner">
+                <div class="hero-left">
+                    <div class="hero-tag reveal"><span class="pulse"></span> Open to opportunities</div>
+                    <h1 class="reveal">Hi, I'm<br><em>Prince.</em></h1>
+                    <div class="hero-roles reveal">
+                        <span class="role-pill active">Game Developer</span>
+                        <span class="role-pill active">UI/UX Designer</span>
+                    </div>
+                    <p class="hero-desc reveal">Crafting immersive game worlds and polished digital interfaces. I turn ideas into playable experiences and beautiful products.</p>
+                    <div class="cta-row reveal">
+                        <a href="#projects" class="btn-p">&#9654; View Projects</a>
+                        <a href="#contact" class="btn-o">&#9993; Get in Touch</a>
+                    </div>
+                </div>
 
-        <section id="contact" class="hidden">
-            <h3>Contact Information</h3>
-            <p class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+63">Phone: +63</a></p>
-            <p class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:princecultura07@gmail.com">Email: princecultura07@gmail.com</a></p>
-        </section>
-
-        <section id="projects" class="hidden flex-container">
-            <div class="image-container">
-                <img src="150bc241-4db3-4fa0-a5c0-f21b675b9c97.jpg" id="certi">
-            </div>
-            <div class="text-container">
-                <h3>My Projects</h3>
-                <p>I have built several web applications using HTML, CSS, JavaScript, and React. I love solving problems and making responsive, beautiful websites!</p>
-            </div>
-        </section>
-        
-        <section id="personal" class="hidden flex-container">
-            <div class="image-container">
-                <img src="674be922-2416-48a5-be38-de033ab987c8.jpg" id="face">
-            </div>
-            <div class="text-container">
-                <h3>My Aspirations</h3>
-                <p>My dream is to become a Full-Stack Developer, mastering both front-end and back-end technologies. I am passionate about building seamless, user-friendly applications that solve real-world problems. Every day, I strive to improve my skills in HTML, CSS, JavaScript, React, Node.js, and other modern technologies. I believe that with continuous learning, dedication, and creativity, I can contribute to projects that make a positive impact on the world.</p>
-                <p>In the future, I aim to work with dynamic teams, collaborate on meaningful projects, and eventually mentor and inspire others who are starting their journey in tech  just like I am today.</p>
-            </div>
-        </section>
-
-        <section id="skills" class="flex-container">
-            <div class="text-container">
-                <h3>My Skills</h3>
-                <p>As a future Full-Stack Developer, I am consistently working to sharpen my technical skills across various technologies.</p>
-                <div class="skill">
-                    <label>HTML</label>
-                    <div class="skill-bar">
-                        <div class="skill-level html"></div>
+                <!-- PHOTO FRAME -->
+                <div class="hero-photo reveal">
+                    <div class="photo-blob"></div>
+                    <div class="photo-ring"></div>
+                    <div class="photo-inner" id="photoInner">
+                        <!-- TO ADD YOUR PHOTO: Replace the placeholder div below with an <img> tag -->
+                        <!-- Example: <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Prince"> -->
+                        <div class="photo-placeholder">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="24" r="12" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Your Photo</span>
+                        </div>
                     </div>
-                </div>
-                <div class="skill">
-                    <label>CSS</label>
-                    <div class="skill-bar">
-                        <div class="skill-level css"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <label>JavaScript</label>
-                    <div class="skill-bar">
-                        <div class="skill-level javascript"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <label>React</label>
-                    <div class="skill-bar">
-                        <div class="skill-level react"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <label>Node.js</label>
-                    <div class="skill-bar">
-                        <div class="skill-level node"></div>
-                    </div>
+                    <div class="photo-dot"></div>
+                    <div class="photo-dot2"></div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer id="footer">
-        <p>Connect with me:</p>
-        <div class="socials">
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
         </div>
-        <hr style="margin: 20px 0; border: 1px solid #555;">
-        <p style="font-size: 14px; color: #aaa;">© 2025 Prince Portfolio. All Rights Reserved.</p>
-        <p style="font-size: 12px; color: #777;">Designed and built by Prince with ❤️ using HTML, CSS, and JavaScript.</p>
+    </section>
+
+    <div class="line"></div>
+
+    <!-- ABOUT -->
+    <section id="about" class="sec">
+        <div class="wrap">
+            <p class="sec-label reveal">About Me</p>
+            <h2 class="sec-title reveal">More Than Just Code</h2>
+            <div class="about-grid">
+                <div class="about-item reveal">
+                    <div class="about-num">01</div>
+                    <div class="about-body">
+                        <h4>Problem-Solving</h4>
+                        <p>I break down complex challenges into clean, logical solutions — whether it's a rendering bug, a game mechanic, or a UX flow that isn't clicking.</p>
+                    </div>
+                </div>
+                <div class="about-item reveal reveal-delay">
+                    <div class="about-num">02</div>
+                    <div class="about-body">
+                        <h4>Communication</h4>
+                        <p>I translate technical details into clear language, keeping teammates, designers, and stakeholders always on the same page.</p>
+                    </div>
+                </div>
+                <div class="about-item reveal">
+                    <div class="about-num">03</div>
+                    <div class="about-body">
+                        <h4>Collaboration</h4>
+                        <p>A natural team player who contributes ideas, gives honest feedback, and elevates the people around me toward shared goals.</p>
+                    </div>
+                </div>
+                <div class="about-item reveal reveal-delay">
+                    <div class="about-num">04</div>
+                    <div class="about-body">
+                        <h4>Time Management</h4>
+                        <p>Deadline-driven and structured. I plan sprints, prioritize tasks, and consistently deliver quality work without burning out.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <!-- SKILLS -->
+    <section id="skills" class="sec">
+        <div class="wrap">
+            <p class="sec-label reveal">What I Use</p>
+            <h2 class="sec-title reveal">Skills & Technologies</h2>
+
+            <div class="skills-block reveal">
+                <div class="skills-block-title">Programming Languages</div>
+                <div class="chip-row">
+                    <span class="chip lang">C++</span>
+                    <span class="chip lang">C#</span>
+                    <span class="chip lang">Python</span>
+                </div>
+            </div>
+
+            <div class="skills-block reveal">
+                <div class="skills-block-title">Game Engines & Frameworks</div>
+                <div class="chip-row">
+                    <span class="chip">Unreal Engine 5</span>
+                    <span class="chip">Godot 4</span>
+                    <span class="chip">SDL2</span>
+                    <span class="chip">OpenGL</span>
+                </div>
+            </div>
+
+            <div class="skills-block reveal">
+                <div class="skills-block-title">Tools & Software</div>
+                <div class="chip-row">
+                    <span class="chip">Blender</span>
+                    <span class="chip">Git & GitHub</span>
+                    <span class="chip">Figma</span>
+                    <span class="chip">VS Code</span>
+                    <span class="chip">Visual Studio</span>
+                </div>
+            </div>
+
+            <div class="skills-block reveal">
+                <div class="skills-block-title">Web Technologies</div>
+                <div class="chip-row">
+                    <span class="chip">HTML</span>
+                    <span class="chip">CSS</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">React</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="sec">
+        <div class="wrap">
+            <p class="sec-label reveal">Portfolio</p>
+            <h2 class="sec-title reveal">Featured Projects</h2>
+            <div class="proj-grid">
+
+                <div class="proj-card reveal">
+                    <div class="proj-top"><span class="proj-num">001</span><span class="proj-status s-done">Complete</span></div>
+                    <h3>OpenGL Terrain Engine</h3>
+                    <p>Procedurally generated terrain renderer with real-time lighting, dynamic LOD, and heightmap-based sculpting built from scratch.</p>
+                    <div class="tags"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">SDL2</span><span class="tag">GLSL</span></div>
+                    <div class="pbtns">
+                        <a href="#" class="pbtn code">&#8599; View Code</a>
+                        <a href="#" class="pbtn demo">&#9654; Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal reveal-delay">
+                    <div class="proj-top"><span class="proj-num">002</span><span class="proj-status s-wip">In Progress</span></div>
+                    <h3>Aether Quest — UE5 RPG</h3>
+                    <p>A third-person action RPG in Unreal Engine 5 with custom ability systems, AI behavior trees, and cinematic Sequencer cutscenes.</p>
+                    <div class="tags"><span class="tag">Unreal Engine 5</span><span class="tag">C++</span><span class="tag">Blueprints</span></div>
+                    <div class="pbtns">
+                        <a href="#" class="pbtn code">&#8599; View Code</a>
+                        <a href="#" class="pbtn demo">&#9654; Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal reveal-delay2">
+                    <div class="proj-top"><span class="proj-num">003</span><span class="proj-status s-done">Complete</span></div>
+                    <h3>Hollow Pixel — Godot 2D</h3>
+                    <p>A metroidvania platformer in Godot 4 with hand-crafted pixel art, a custom collision system, and atmospheric shader effects.</p>
+                    <div class="tags"><span class="tag">Godot 4</span><span class="tag">GDScript</span><span class="tag">C#</span><span class="tag">Blender</span></div>
+                    <div class="pbtns">
+                        <a href="#" class="pbtn code">&#8599; View Code</a>
+                        <a href="#" class="pbtn demo">&#9654; Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal">
+                    <div class="proj-top"><span class="proj-num">004</span><span class="proj-status s-done">Complete</span></div>
+                    <h3>SDL Particle Engine</h3>
+                    <p>A fully configurable particle system in SDL2 with emitter shapes, physics forces, color gradients, and JSON-driven presets for fire, smoke, and sparks.</p>
+                    <div class="tags"><span class="tag">C++</span><span class="tag">SDL2</span><span class="tag">OpenGL</span></div>
+                    <div class="pbtns">
+                        <a href="#" class="pbtn code">&#8599; View Code</a>
+                        <a href="#" class="pbtn demo">&#9654; Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal reveal-delay">
+                    <div class="proj-top"><span class="proj-num">005</span><span class="proj-status s-done">Complete</span></div>
+                    <h3>Blender Asset Pack</h3>
+                    <p>40+ game-ready 3D props, environment pieces, and character bases optimized for real-time engines with full PBR material sets.</p>
+                    <div class="tags"><span class="tag">Blender</span><span class="tag">PBR</span><span class="tag">Substance</span></div>
+                    <div class="pbtns">
+                        <a href="#" class="pbtn code">&#8599; View Code</a>
+                        <a href="#" class="pbtn demo">&#9654; Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal reveal-delay2">
+                    <div class="proj-top"><span class="proj-num">006</span><span class="proj-status s-wip">In Progress</span></div>
+                    <h3>AI Companion System</h3>
+                    <p>An NPC companion framework using behavior trees and state machines in UE5. The AI adapts to player behavior and generates contextual dialogue.</p>
+                    <div class="tags"><span class="tag">Unreal Engine</span><span class="tag">C++</span><span class="tag">AI</span><span class="tag">Python</span></div>
+                    <div class="pbtns">
+                        <a href="#" class="pbtn code">&#8599; View Code</a>
+                        <a href="#" class="pbtn demo">&#9654; Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal">
+                    <div class="proj-top"><span class="proj-num">007</span><span class="proj-status s-done">Complete</span></div>
+                    <h3>GameUI Design System</h3>
+                    <p>A modular HUD & UI component library for game studios — health bars, minimaps, inventory grids, and dialogue systems in Figma and CSS.</p>
+                    <div class="tags"><span class="tag">UI/UX</span><span class="tag">Figma</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                    <div class="pbtns">
+                        <a href="#" class="pbtn code">&#8599; View Code</a>
+                        <a href="#" class="pbtn demo">&#9654; Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal reveal-delay">
+                    <div class="proj-top"><span class="proj-num">008</span><span class="proj-status s-done">Complete</span></div>
+                    <h3>2D Physics Sandbox</h3>
+                    <p>A rigid body physics simulation built with C++ and SDL2. Supports dynamic collisions, joints, friction, and a real-time debug overlay.</p>
+                    <div class="tags"><span class="tag">C++</span><span class="tag">SDL2</span><span class="tag">Physics</span></div>
+                    <div class="pbtns">
+                        <a href="#" class="pbtn code">&#8599; View Code</a>
+                        <a href="#" class="pbtn demo">&#9654; Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal reveal-delay2">
+                    <div class="proj-top"><span class="proj-num">009</span><span class="proj-status s-done">Complete</span></div>
+                    <h3>Portfolio Website</h3>
+                    <p>This portfolio — designed and built from scratch with dark/light theming, canvas animations, a morphing photo frame, and zero frameworks.</p>
+                    <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                    <div class="pbtns">
+                        <a href="#" class="pbtn code">&#8599; View Code</a>
+                        <a href="#" class="pbtn demo">&#9654; Live Demo</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="sec">
+        <div class="wrap">
+            <p class="sec-label reveal">Get In Touch</p>
+            <h2 class="sec-title reveal">Let's Build Something</h2>
+            <div class="contact-wrap">
+                <div class="reveal">
+                    <p class="contact-desc">I'm open to game dev collaborations, UI/UX projects, or just a good conversation about games and code. Drop me a message!</p>
+                    <div class="c-links">
+                        <a href="mailto:princecultura07@gmail.com" class="c-link">
+                            <div class="c-link-icon">✉</div> princecultura07@gmail.com
+                        </a>
+                        <a href="https://github.com/yourusername" class="c-link" target="_blank">
+                            <div class="c-link-icon">&#9650;</div> github.com/prince
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" class="c-link" target="_blank">
+                            <div class="c-link-icon">in</div> linkedin.com/in/prince
+                        </a>
+                        <a href="https://www.facebook.com/" class="c-link" target="_blank">
+                            <div class="c-link-icon">f</div> Facebook
+                        </a>
+                    </div>
+                </div>
+                <div class="c-form reveal reveal-delay">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea rows="4" placeholder="Your Message..."></textarea>
+                    <button class="btn-p">&#9993; Send Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Built by <span>Prince</span> &nbsp;·&nbsp; © 2025 All Rights Reserved</p>
     </footer>
-
-    <div class="cursor"></div>
-    <div class="smoke-container"></div>
-
-    <script>  
-(function () {
-  const canvas = document.getElementById('stars-canvas');
-  const ctx = canvas.getContext('2d');
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  const stars = [];
-  const starCount = 200;
-
-  for (let i = 0; i < starCount; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 1.5,
-      alpha: Math.random(),
-      delta: Math.random() * 0.02
-    });
-  }
-
-  function drawStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    stars.forEach(star => {
-      star.alpha += star.delta;
-      if (star.alpha <= 0 || star.alpha >= 1) star.delta = -star.delta;
-
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
-      ctx.fill();
-    });
-    requestAnimationFrame(drawStars);
-  }
-
-  drawStars();
-})();
-  const canvas = document.getElementById('background-animation');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let particles = [];
-  const particleCount = 100;
-
-  class Particle {
-    constructor() {
-      this.reset();
-    }
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.radius = Math.random() * 2;
-      this.speedX = (Math.random() - 0.5) * 0.5;
-      this.speedY = (Math.random() - 0.5) * 0.5;
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-        this.reset();
-      }
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 200, 0.8)';
-      ctx.fill();
-    }
-  }
-
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-
-
-        
-       const toggle = document.getElementById('toggle-theme');
-       toggle.addEventListener('change', () => {
-       document.body.classList.toggle('dark-mode');
-       });
-
-
-
-        const selector = document.getElementById('about-me');
-        const sections = ['contact', 'projects', 'personal'];
-
-        selector.addEventListener('change', function() {
-            const value = this.value;
-
-            
-            sections.forEach(id => {
-                const elem = document.getElementById(id);
-                elem.style.display = 'none';
-                elem.classList.remove('fade-in');
-            });
-
-            
-            if (value !== "default") {
-                document.getElementById('main-content').style.display = 'none';
-            } else {
-                document.getElementById('main-content').style.display = 'block';
-            }
-
-            
-            if (sections.includes(value)) {
-                const elem = document.getElementById(value);
-                elem.style.display = 'block';
-                void elem.offsetWidth; // Force reflow
-                elem.classList.add('fade-in');
-            }
-        });
-
-        const cursor = document.querySelector('.cursor');
-        const smokeContainer = document.querySelector('.smoke-container');
-
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = `${e.pageX}px`;
-            cursor.style.top = `${e.pageY}px`;
-
-            createSmoke(e.pageX, e.pageY);
-        });
-
-        
-        function createSmoke(x, y) {
-            const smoke = document.createElement('div');
-            smoke.classList.add('smoke');
-            smoke.style.left = `${x}px`;
-            smoke.style.top = `${y}px`;
-
-            smokeContainer.appendChild(smoke);
-
-            
-            setTimeout(() => {
-                smoke.remove();
-            }, 1500); 
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
