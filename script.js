@@ -133,6 +133,17 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.top = mouseY + 'px';
 });
 
+// Add hover class to body when hovering over interactive elements
+const interactiveElements = document.querySelectorAll('a, button, input, textarea, .chip, .proj-card, .about-item');
+interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        document.body.classList.add('cursor-hover');
+    });
+    el.addEventListener('mouseleave', () => {
+        document.body.classList.remove('cursor-hover');
+    });
+});
+
 // Smooth follower animation
 function animateCursor() {
     followerX += (mouseX - followerX) * 0.15;
@@ -144,7 +155,6 @@ function animateCursor() {
     requestAnimationFrame(animateCursor);
 }
 animateCursor();
-
 // THEME TOGGLE
 const tb = document.getElementById('themeBtn');
 tb.addEventListener('click', () => {
