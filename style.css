@@ -41,30 +41,52 @@ body {
     cursor: none;
 }
 
-/* CURSOR */
-#cur {
+/* MODERN CLEAN CURSOR */
+.cursor {
     position: fixed;
-    width: 9px;
-    height: 9px;
-    background: var(--accent);
-    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent);
+    border-radius: 2px;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: background .2s;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.2s, height 0.2s, border-color 0.2s, border-radius 0.2s;
+    mix-blend-mode: difference;
 }
 
-#ring {
+.cursor-follower {
     position: fixed;
-    width: 34px;
-    height: 34px;
-    border: 1.5px solid var(--accent);
+    width: 4px;
+    height: 4px;
+    background: var(--accent);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
-    opacity: .45;
-    transition: opacity .2s;
+    transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+/* Cursor hover states */
+body:hover .cursor {
+    border-radius: 4px;
+}
+
+a:hover ~ .cursor,
+button:hover ~ .cursor,
+input:hover ~ .cursor,
+textarea:hover ~ .cursor {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border-color: var(--accent2);
+}
+
+a:hover ~ .cursor-follower,
+button:hover ~ .cursor-follower {
+    width: 6px;
+    height: 6px;
+    background: var(--accent2);
 }
 
 /* STARS CANVAS */
