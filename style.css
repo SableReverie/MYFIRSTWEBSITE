@@ -51,7 +51,7 @@ body {
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%) rotate(45deg);
-    transition: width 0.2s, height 0.2s, border-color 0.2s, border-radius 0.2s;
+    transition: width 0.3s, height 0.3s, border-color 0.3s, border-radius 0.3s;
     mix-blend-mode: difference;
 }
 
@@ -64,31 +64,22 @@ body {
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background 0.2s;
+    transition: width 0.3s, height 0.3s, background 0.3s;
 }
 
-/* Cursor hover states */
-body:hover .cursor {
-    border-radius: 4px;
-}
-
-a:hover ~ .cursor,
-button:hover ~ .cursor,
-input:hover ~ .cursor,
-textarea:hover ~ .cursor {
-    width: 30px;
-    height: 30px;
+/* Cursor hover states - using body class instead */
+body.cursor-hover .cursor {
+    width: 32px;
+    height: 32px;
     border-radius: 8px;
     border-color: var(--accent2);
 }
 
-a:hover ~ .cursor-follower,
-button:hover ~ .cursor-follower {
+body.cursor-hover .cursor-follower {
     width: 6px;
     height: 6px;
     background: var(--accent2);
 }
-
 /* STARS CANVAS */
 #stars {
     position: fixed;
